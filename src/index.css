@@ -30,3 +30,13 @@ p{
    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.labs{
+  background-color: burlywood;
+  padding: 2%;
+}
+
+.single  h3{
+   color: coral;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
