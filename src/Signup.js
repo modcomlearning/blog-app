@@ -1,16 +1,40 @@
 import { useState } from "react";
 const Signup = () => {
-
     //Hook
     const [lab_name, setName] = useState(null)
     const [permit_id, setPermit] = useState(null)
     const [email, setEmail] = useState(null)
     const [phone, setPhone] = useState(null)
     const [password, setPassword] = useState(null)
+
+    //To Submit data
+    const submit = (e) => {
+        console.log("Works")
+        e.preventDefault();
+        let lab = {lab_name, permit_id,email, phone, password}
+        fetch("https://modcom.pythonanywhere.com/api/lab_signup", {
+            method: 'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify(lab)
+        })
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+                console.log(data.message);
+            })
+            .catch((error) => {
+                console.log(error.message);
+           })
+
+    }//end here
+    //Axios
+
+
     return ( 
         <div className="form">
             <h1>Register a Lab</h1>
-            <form>
+            <form onSubmit={submit}>
                 <input type="text" placeholder="Enter Lab Name" value={lab_name}
                     onChange={(e) => setName(e.target.value)} required/> <br /><br />
                 
@@ -28,7 +52,7 @@ const Signup = () => {
                 
                 <button>Create Account</button>
             </form>
-            Lab Is {lab_name}
+            {/* Lab Is {lab_name} */}
          </div>
 
      );
