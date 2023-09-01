@@ -22,6 +22,7 @@ const useConference = (url) => {
     }, [url])//use effect ends here
     return { data , loading ,error };
 }
+
 export default useConference;
 
 
