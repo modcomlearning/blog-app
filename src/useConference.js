@@ -7,9 +7,10 @@ const useConference = (url) => {
     useEffect(() => {
         fetch(url)
             .then((response) => {
-                response.json();
+                return response.json();
             })
             .then((data) => {
+                console.log("Data1"+data)
                 setData(data)
                 setLoading(false)
                 setError(null)
@@ -21,7 +22,6 @@ const useConference = (url) => {
     }, [url])//use effect ends here
     return { data , loading ,error };
 }
-
 export default useConference;
 
 

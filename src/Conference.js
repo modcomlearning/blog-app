@@ -3,8 +3,8 @@ import useConference from "./useConference";
 const Conference = () => {
     //here we use our custom HOOK   useConference
     const { data : conferences, loading, error } =
-        useConference("http://musau.pythonanywhere.com/getconference_room")
-    
+        useConference("https://musau.pythonanywhere.com/getconference_room")
+     console.log("Data "+conferences) 
     return (
         <div className="conf">
             <h2>Available Rooms</h2>
@@ -14,7 +14,7 @@ const Conference = () => {
                     {conferences && conferences.map((conference) => (
                     <div className="single" key={conference.room_id}>
                         <h3>{conference.room_name}</h3>
-                        <img src={conference.image_url} alt="" width="100"/>    
+                        <img src={conference.image_url} alt="" width="200"/>    
                         <p> {conference.room_desc}</p>
                         <b>KES { conference.cost}</b>
                         <hr />
