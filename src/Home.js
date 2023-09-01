@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Blogs from "./Blogs";
+import Labs from "./Labs";
 const Home = () => {
     //Hooks - used to a new state of a variable
     //Hooks make a code reactive, it can update UI on runtime
@@ -13,9 +15,12 @@ const Home = () => {
     }
 
 
-    
+    let message = "This is a message to Demo Props"
     return ( 
         <div className="home">
+
+        
+
             <h1>Get New Experience</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit vitae voluptatem in nihil corrupti, doloribus aut perferendis! Distinctio consequuntur veniam hic ducimus! Quos sapiente numquam adipisci ea doloremque veritatis! Vel?</p>
             <h2> His name is {name}  and {age} Yrs</h2>

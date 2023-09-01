@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-const Blogs = () => {
+const Blogs = (props) => {
     //Hook
     const [blogs, setBlogs] =  useState([{ id: 1, title: "NTV", desc: "Some data" },
         { id: 2, title: "NTV", desc: "Some data2" },
@@ -11,6 +11,7 @@ const Blogs = () => {
     return ( 
         <div className="list">
             <h2>Latest Blogs</h2>
+            {props.passedValue}
             <div className="preview">
                 {blogs.map((blog) => (
                     <div className="blogs" key={blog.id}>

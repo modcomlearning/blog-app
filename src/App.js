@@ -3,8 +3,10 @@ import Navbar from './Navbar';
 import Home from './Home';
 import Blogs from './Blogs';
 import Labs from './Labs';
+import Conference from './Conference';
 // to be used in routing
 import  {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Signup from './Signup';
 function App() {
   //Arrow Function
   const handleClick = () => {
@@ -35,6 +37,8 @@ function App() {
             <Route path='/blogs' element={<Blogs />} ></Route>
             <Route path='/labs' element={<Labs />}></Route>
             <Route path='/conferences' element={<Conference />}></Route>
+            <Route path='/signup' element={<Signup />}></Route>
+  
           </Routes>
         </div>
          {/* <h1>My Blog</h1>

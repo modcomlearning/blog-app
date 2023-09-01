@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-const Labs = () => {
+// We recieve any value passed into this Compnent
+// We access using the Key
+const Labs = (props) => {
+      let value = props.message
+      console.log("String "+value)
     //Lets see how we can access dataonline APis.
     //useEffect - It runs atleast once when a page renders
     //useState - it is used to store values in the app.
@@ -29,6 +33,7 @@ const Labs = () => {
     return ( 
         <div className="labs">
             <h2>Registered Labs</h2>
+            
             <div className="listing">
                 {loading && <div>Loading ... </div>}
                 {error && <div> Error occured. Try Later </div>}
