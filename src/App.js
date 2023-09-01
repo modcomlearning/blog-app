@@ -34,6 +34,7 @@ function App() {
             <Route path='/' element={<Home />}></Route>
             <Route path='/blogs' element={<Blogs />} ></Route>
             <Route path='/labs' element={<Labs />}></Route>
+            <Route path='/conferences' element={<Conference />}></Route>
           </Routes>
         </div>
          {/* <h1>My Blog</h1>
