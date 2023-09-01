@@ -6,10 +6,12 @@ const Signup = () => {
     const [email, setEmail] = useState(null)
     const [phone, setPhone] = useState(null)
     const [password, setPassword] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     //To Submit data
     const submit = (e) => {
         console.log("Works")
+        setLoading(true)
         e.preventDefault();
         let lab = {lab_name, permit_id,email, phone, password}
         fetch("https://modcom.pythonanywhere.com/api/lab_signup", {
@@ -21,20 +23,25 @@ const Signup = () => {
                 return response.json()
             })
             .then((data) => {
+                setLoading(false)
                 console.log(data.message);
             })
             .catch((error) => {
+                setLoading(false)
                 console.log(error.message);
            })
-
     }//end here
     //Axios
+    //Redux
+    //Props
+    //Dashboard
 
 
     return ( 
         <div className="form">
             <h1>Register a Lab</h1>
             <form onSubmit={submit}>
+                {loading  && <div> We are Proccessing your Request.. Please Wait..</div>}
                 <input type="text" placeholder="Enter Lab Name" value={lab_name}
                     onChange={(e) => setName(e.target.value)} required/> <br /><br />
                 
