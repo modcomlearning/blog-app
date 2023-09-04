@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Blogs from "./Blogs";
 import Labs from "./Labs";
+
+
+import styled from 'styled-components'
 const Home = () => {
     //Hooks - used to a new state of a variable
     //Hooks make a code reactive, it can update UI on runtime
@@ -16,10 +19,29 @@ const Home = () => {
 
 
     let message = "This is a message to Demo Props"
+    //Styles - internal
+    const Modcom = styled.h1`
+          color:orange;
+          background-color:black;
+          padding:20px;
+    `;
+
+    const Button = styled.button`
+          color:orange;
+          background-color:black;
+          font-family:arial;
+          padding:5px;
+    `;
+  //Do paragraph
+    
     return ( 
         <div className="home">
+            {/* below is a styled component */}
+            <Modcom>MediLab Admin</Modcom>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt tenetur laboriosam recusandae laudantium quas odio asperiores cupiditate nulla, sunt consectetur natus voluptatum laborum debitis qui, quod temporibus quibusdam nihil dicta.</p>
+            <Button>Get Started</Button>
+            <br /><br />
 
-        
 
             <h1>Get New Experience</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit vitae voluptatem in nihil corrupti, doloribus aut perferendis! Distinctio consequuntur veniam hic ducimus! Quos sapiente numquam adipisci ea doloremque veritatis! Vel?</p>
