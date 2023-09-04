@@ -40,3 +40,15 @@ p{
    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.loading{
+  color: orange;
+}
+
+.success {
+  color: green;
+}
+
+.failure{
+  color: red;
+}
+
