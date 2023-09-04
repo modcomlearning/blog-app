@@ -10,7 +10,27 @@ const Signup = () => {
     const [success, setSuccess] = useState(null)
     const [failure, setFailure] = useState(null)
 
-    //To Submit data
+
+    //validation Phone
+    const [validation, setValidationError] = useState('')
+    const handlePhoneValidation = (e) => {
+        const regex = /^254\d{9}$/;
+        const value = e.target.value
+    
+        if (!regex.test(value)) {
+                setValidationError('Invalid use  254XXXXXXXXX format')
+        }
+        else {
+             setValidationError('')
+        }
+
+        setPhone(value)   
+    
+     }//end
+
+
+
+
     const submit = (e) => {
         console.log("Works")
         setLoading(true)
@@ -62,7 +82,9 @@ const Signup = () => {
                     onChange={(e) => setEmail(e.target.value)} required/> <br /><br />
                 
                 <input type="tel" placeholder="Enter Phone" value={phone}
-                    onChange={(e) => setPhone(e.target.value)} required/> <br /><br />
+                    onChange={handlePhoneValidation} required /> <br />
+                {validation && <div className="failure"> { validation}</div>}
+                   <br />
                 
                 <input type="password" placeholder="Enter Password" value={password}
                     onChange={(e) => setPassword(e.target.value)} required/> <br /><br />
