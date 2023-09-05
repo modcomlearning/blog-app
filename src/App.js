@@ -7,6 +7,7 @@ import Conference from './Conference';
 // to be used in routing
 import  {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Signup from './Signup';
+import About from './About';
 function App() {
   //Arrow Function
   const handleClick = () => {
@@ -38,7 +39,7 @@ function App() {
             <Route path='/labs' element={<Labs />}></Route>
             <Route path='/conferences' element={<Conference />}></Route>
             <Route path='/signup' element={<Signup />}></Route>
-  
+            <Route path='/about' element={<About />}></Route>
           </Routes>
         </div>
          {/* <h1>My Blog</h1>
