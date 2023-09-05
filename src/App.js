@@ -8,6 +8,7 @@ import Conference from './Conference';
 import  {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Signup from './Signup';
 import About from './About';
+import GlobalStyle from './styles/Global';
 function App() {
   //Arrow Function
   const handleClick = () => {
@@ -29,7 +30,8 @@ function App() {
   //States(Hooks), Functions, Props, Lists, useEffec
   return (
     <Router>       
-    <div className="App">
+      <div className="App">
+        <GlobalStyle/>
       <Navbar />
         <div className="content">
           {/* this is reffering from Navbar JS */}
